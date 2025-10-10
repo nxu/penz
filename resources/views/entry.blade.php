@@ -40,7 +40,7 @@
                                class="basis-full grow text-right px-3 py-1 rounded-l border border-stone-200 dark:border-stone-700 focus:outline-hidden"
                         >
 
-                        <div class="rounded-r bg-stone-200 dark:bg-stone-800 inline-flex items-center px-2">
+                        <div class="rounded-r bg-stone-200 dark:bg-stone-700 inline-flex items-center px-2">
                             Ft
                         </div>
                     </div>
