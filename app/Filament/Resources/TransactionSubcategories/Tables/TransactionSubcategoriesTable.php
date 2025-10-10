@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\TransactionSubcategories\Tables;
 
 use Filament\Actions\EditAction;
+use Filament\Tables\Columns\ColorColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -16,7 +17,7 @@ class TransactionSubcategoriesTable
                     ->label('Megnevezés')
                     ->searchable(),
 
-                TextColumn::make('color')
+                ColorColumn::make('color')
                     ->label('Szín')
                     ->searchable(),
 

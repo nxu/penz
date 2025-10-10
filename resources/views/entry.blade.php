@@ -21,8 +21,8 @@
         x-on:submit="formDisabled = true"
         class="px-4 pt-8"
     >
-        <div class="mx-auto w-full max-w-2xl rounded bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800">
-            <div class="px-4 py-2 rounded-t border-b border-stone-200 dark:border-stone-800">
+        <div class="mx-auto w-full max-w-2xl rounded bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700">
+            <div class="px-4 py-2 rounded-t border-b border-stone-200 dark:border-stone-700">
                 <p class="text-lg">Szia, <span class="font-bold">{{ $user->name }}</span>!</p>
             </div>
 
@@ -37,7 +37,7 @@
                                min="1"
                                step="1"
                                required
-                               class="basis-full grow text-right px-3 py-1 rounded-l border border-stone-200 dark:border-stone-800 focus:outline-hidden"
+                               class="basis-full grow text-right px-3 py-1 rounded-l border border-stone-200 dark:border-stone-700 focus:outline-hidden"
                         >
 
                         <div class="rounded-r bg-stone-200 dark:bg-stone-800 inline-flex items-center px-2">
@@ -55,7 +55,7 @@
                                id="date"
                                required
                                value="{{ now()->format('Y-m-d') }}"
-                               class="basis-full grow px-3 py-1 rounded-l border border-stone-200 dark:border-stone-800 focus:outline-hidden">
+                               class="basis-full grow px-3 py-1 rounded-l border border-stone-200 dark:border-stone-700 focus:outline-hidden">
                     </div>
                 </div>
 
@@ -68,7 +68,7 @@
                             name="transaction_category_id"
                             id="transaction_category_id"
                             required
-                            class="basis-full grow px-3 py-2 rounded-l border border-stone-200 dark:border-stone-800 focus:outline-hidden"
+                            class="basis-full grow px-3 py-2 rounded-l border border-stone-200 dark:border-stone-700 focus:outline-hidden"
                         >
                             <option value="">- Válassz -</option>
 
@@ -91,7 +91,7 @@
                                     name="transaction_subcategory_id"
                                     id="transaction_subcategory_id"
                                     required
-                                    class="basis-full grow px-3 py-2 rounded-l border border-stone-200 dark:border-stone-800 focus:outline-hidden"
+                                    class="basis-full grow px-3 py-2 rounded-l border border-stone-200 dark:border-stone-700 focus:outline-hidden"
                                 >
                                     <option value="">- Válassz -</option>
 
@@ -114,7 +114,7 @@
                             name="comments"
                             id="comments"
                             rows="2"
-                            class="basis-full grow px-3 py-1 rounded-l border border-stone-200 dark:border-stone-800 focus:outline-hidden"
+                            class="basis-full grow px-3 py-1 rounded-l border border-stone-200 dark:border-stone-700 focus:outline-hidden"
                         ></textarea>
                     </div>
                 </div>
@@ -122,7 +122,7 @@
                 <button
                     x-bind:disabled="formDisabled"
                     type="submit"
-                    class="rounded w-full py-2 px-4 bg-fuchsia-500 disabled:bg-fuchsia-200 text-fuchsia-50  dark:bg-fuchsia-800 dark:disabled:bg-fuchsia-500 dark:text-fuchsia-200"
+                    class="rounded w-full py-2 px-4 bg-fuchsia-500 disabled:bg-fuchsia-200 text-fuchsia-50  dark:bg-fuchsia-800 dark:disabled:bg-fuchsia-500 dark:text-fuchsia-200 hover:opacity-90 active:opacity-80"
                 >
                     Mentés
                 </button>
