@@ -13,11 +13,11 @@ class Transaction extends Model
 
     public function category(): BelongsTo
     {
-        return $this->belongsTo(TransactionCategory::class);
+        return $this->belongsTo(TransactionCategory::class, 'transaction_category_id');
     }
 
     public function subcategory(): BelongsTo
     {
-        return $this->belongsTo(TransactionSubcategory::class);
+        return $this->belongsTo(TransactionSubcategory::class, 'transaction_subcategory_id');
     }
 }
