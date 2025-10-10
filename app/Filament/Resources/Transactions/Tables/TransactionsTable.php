@@ -2,9 +2,7 @@
 
 namespace App\Filament\Resources\Transactions\Tables;
 
-use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
-use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\DatePicker;
 use Filament\Support\Enums\TextSize;
@@ -81,11 +79,6 @@ class TransactionsTable
                 DeleteAction::make(),
             ])
             ->defaultSort('id', 'desc')
-            ->defaultPaginationPageOption(25)
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
-            ]);
+            ->defaultPaginationPageOption(25);
     }
 }
