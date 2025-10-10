@@ -21,6 +21,8 @@ return new class extends Migration
             $table->foreignIdFor(User::class)
                 ->constrained()
                 ->cascadeOnDelete();
+
+            $table->integer('order_column')->default(0);
         });
 
         Schema::create('transaction_subcategories', function (Blueprint $table) {
@@ -36,6 +38,8 @@ return new class extends Migration
             $table->foreignIdFor(User::class)
                 ->constrained()
                 ->cascadeOnDelete();
+
+            $table->integer('order_column')->default(0);
         });
     }
 
