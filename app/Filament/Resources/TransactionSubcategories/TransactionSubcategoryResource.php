@@ -32,7 +32,7 @@ class TransactionSubcategoryResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'title';
 
-    protected static string | UnitEnum | null $navigationGroup = 'Beállítások';
+    protected static string|UnitEnum|null $navigationGroup = 'Beállítások';
 
     public static function getEloquentQuery(): Builder
     {

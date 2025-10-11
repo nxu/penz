@@ -32,7 +32,7 @@ class TransactionCategoryResource extends Resource
 
     protected static ?int $navigationSort = 10;
 
-    protected static string | UnitEnum | null $navigationGroup = 'Beállítások';
+    protected static string|UnitEnum|null $navigationGroup = 'Beállítások';
 
     public static function getEloquentQuery(): Builder
     {

@@ -2,8 +2,11 @@
 
 namespace App\Filament\Resources\Transactions\Tables;
 
+use App\Filament\Exports\TransactionExporter;
 use Filament\Actions\DeleteAction;
+use Filament\Actions\ExportAction;
 use Filament\Actions\ViewAction;
+use Filament\Facades\Filament;
 use Filament\Forms\Components\DatePicker;
 use Filament\Support\Enums\TextSize;
 use Filament\Tables\Columns\TextColumn;
@@ -77,6 +80,11 @@ class TransactionsTable
             ->recordActions([
                 ViewAction::make(),
                 DeleteAction::make(),
+            ])
+            ->headerActions([
+                ExportAction::make()
+                    ->exporter(TransactionExporter::class)
+                    ->modifyQueryUsing(fn (Builder $query) => $query->where('transactions.user_id', Filament::auth()->id())),
             ])
             ->defaultSort('id', 'desc')
             ->defaultPaginationPageOption(25);
