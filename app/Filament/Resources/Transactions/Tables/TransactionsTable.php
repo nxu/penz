@@ -4,11 +4,13 @@ namespace App\Filament\Resources\Transactions\Tables;
 
 use App\Filament\Exports\TransactionExporter;
 use Filament\Actions\DeleteAction;
+use Filament\Actions\EditAction;
 use Filament\Actions\ExportAction;
 use Filament\Actions\ViewAction;
 use Filament\Facades\Filament;
 use Filament\Forms\Components\DatePicker;
 use Filament\Support\Enums\TextSize;
+use Filament\Tables\Columns\Summarizers\Sum;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
@@ -29,7 +31,10 @@ class TransactionsTable
                 TextColumn::make('amount')
                     ->label('Összeg')
                     ->alignRight()
-                    ->money('HUF', decimalPlaces: 0),
+                    ->money('HUF', decimalPlaces: 0)
+                    ->summarize([
+                        Sum::make(),
+                    ]),
 
                 TextColumn::make('category.title')
                     ->label('Kategória'),
@@ -78,8 +83,9 @@ class TransactionsTable
                     }),
             ])
             ->recordActions([
-                ViewAction::make(),
-                DeleteAction::make(),
+                ViewAction::make()->hiddenLabel(),
+                EditAction::make(),
+                DeleteAction::make()->hiddenLabel(),
             ])
             ->headerActions([
                 ExportAction::make()
