@@ -31,7 +31,7 @@ class EntryController
         return response()->view('entry', compact('categories', 'user'));
     }
 
-    public function save(Request $request): Response
+    public function save(User $user, Request $request): Response
     {
         $request->validate([
             'amount' => ['required', 'integer', 'min:1'],
@@ -42,17 +42,17 @@ class EntryController
 
         $category = TransactionCategory::find($request->get('transaction_category_id'));
 
-        abort_unless($category->user_id == auth()->id(), 400);
+        abort_unless($category->user_id == $user->id, 400);
         abort_if($category->subcategories->isNotEmpty() && $request->isNotFilled('transaction_subcategory_id'), 400);
 
         if ($request->filled('transaction_subcategory_id')) {
             $subcategory = TransactionSubcategory::find($request->get('transaction_subcategory_id'));
 
-            abort_unless($subcategory->user_id == auth()->id(), 400);
+            abort_unless($subcategory->user_id == $user->id, 400);
             abort_unless($subcategory->transaction_category_id == $category->getKey(), 400);
         }
 
-        auth()->user()->transactions()->create($request->only([
+        $user->transactions()->create($request->only([
             'amount',
             'date',
             'transaction_category_id',
