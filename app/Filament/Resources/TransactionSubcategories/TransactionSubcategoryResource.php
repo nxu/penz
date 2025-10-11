@@ -14,6 +14,7 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use UnitEnum;
 
 class TransactionSubcategoryResource extends Resource
 {
@@ -30,6 +31,8 @@ class TransactionSubcategoryResource extends Resource
     protected static ?int $navigationSort = 10;
 
     protected static ?string $recordTitleAttribute = 'title';
+
+    protected static string | UnitEnum | null $navigationGroup = 'Beállítások';
 
     public static function getEloquentQuery(): Builder
     {
