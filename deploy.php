@@ -29,4 +29,8 @@ after('deploy:vendors', function () {
     run('cd {{release_or_current_path}} && /home/penz/.bun/bin/bun run build');
 });
 
+after('artisan:event:cache', function () {
+    run('cd {{release_or_current_path}} && php artisan filament:optimize');
+});
+
 after('deploy:symlink', 'artisan:queue:restart');
