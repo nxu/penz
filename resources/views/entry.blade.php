@@ -19,6 +19,7 @@
         method="POST"
         x-data='entry(@json($categories))'
         x-on:submit="formDisabled = true"
+        autocomplete="off"
         class="px-4 pt-8"
     >
         <div class="mx-auto w-full max-w-2xl rounded bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700">
