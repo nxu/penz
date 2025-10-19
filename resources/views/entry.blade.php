@@ -15,6 +15,13 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-stone-100 dark:bg-stone-900 text-stone-800 dark:text-stone-200">
+
+    @if (session()->pull('success'))
+        <div id="success-notification" class="fixed top-4 left-1/2 -translate-x-1/2 w-full max-w-2xl p-4 bg-lime-400 border border-lime-600 text-lime-900 dark:bg-lime-800 dark:border-lime-900 dark:text-lime-400 rounded">
+            Sikeresen elmentve.
+        </div>
+    @endif
+
     <form
         method="POST"
         x-data='entry(@json($categories))'

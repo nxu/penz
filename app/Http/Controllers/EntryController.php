@@ -60,6 +60,6 @@ class EntryController
             'comments',
         ]));
 
-        return back();
+        return back()->with('success', true);
     }
 }

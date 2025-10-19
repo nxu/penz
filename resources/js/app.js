@@ -24,4 +24,11 @@ document.addEventListener('alpine:init', () => {
     }))
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const notification = document.getElementById('success-notification');
+    if (notification) {
+        window.setTimeout(() => notification.remove(), 3000);
+    }
+});
+
 Alpine.start()
