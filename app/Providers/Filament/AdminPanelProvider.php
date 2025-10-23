@@ -27,7 +27,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->favicon('/icon.png')
+            ->favicon('/admin-icon.svg')
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->login()
             ->profile()
