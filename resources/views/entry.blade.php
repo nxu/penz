@@ -140,8 +140,6 @@
 
     <p class="mt-4 mx-auto text-center text-xs text-stone-300 dark:text-stone-400">
         &copy; {{ date('Y') }} nxu
-        <br>
-        Szia, Nyuszi ❤️
     </p>
 </body>
 </html>
